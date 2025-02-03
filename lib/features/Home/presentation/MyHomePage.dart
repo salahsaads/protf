@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/common/utils/color/colors.dart';
+import 'package:portfolio/features/Home/widget/CustomTextButton.dart';
 import 'package:portfolio/features/about/presentation/part3.dart';
 import 'package:portfolio/main.dart';
 import '../../service/presentation/service.dart';
@@ -73,12 +75,366 @@ class _MyHomePageState extends State<MyHomePage> {
                 part1(w: w, h: h),
                 part2(h: h, w: w, platformsWithIndex: platformsWithIndex),
                 part3(h: h, w: w),
-                part4(w: w, h: h)
+                part4(w: w, h: h),
+                part5(w: w, h: h),
+                Container(
+                    width: w,
+                    height: h * 0.7,
+                    color: Colorss.ContainerColor2,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          left: w * 0.1, right: w * 0.1, top: h * 0.1),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset('assets/LOGO.svg'),
+                          SizedBox(
+                            height: h * .1,
+                          ),
+                          Row(
+                            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomTextButton(
+                                isSelected: false,
+                                text: 'Home',
+                                onPressed: () {},
+                              ),
+                              SizedBox(
+                                width: w * 0.01,
+                              ),
+                              CustomTextButton(
+                                text: 'Services',
+                                onPressed: () {},
+                              ),
+                              SizedBox(
+                                width: w * 0.01,
+                              ),
+                              CustomTextButton(
+                                text: 'About me',
+                                onPressed: () {},
+                              ),
+                              SizedBox(
+                                width: w * 0.01,
+                              ),
+                              CustomTextButton(
+                                text: 'Portfolio',
+                                onPressed: () {},
+                              ),
+                              SizedBox(
+                                width: w * 0.01,
+                              ),
+                              CustomTextButton(
+                                text: 'Contact me',
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: h * .05,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                alignment: Alignment.center,
+                                width: w * 0.025,
+                                height: w * 0.025,
+                                child: SvgPicture.asset('assets/Vector.svg'),
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Colorss.TextColor1,
+                                      width: .5,
+                                    )),
+                              ),
+                              SizedBox(
+                                width: w * 0.02,
+                              ),
+                              Container(
+                                alignment: Alignment.center,
+                                child: SvgPicture.asset(
+                                    'assets/mingcute_linkedin-line.svg'),
+                                width: w * 0.025,
+                                height: w * 0.025,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Colorss.TextColor1,
+                                      width: .5,
+                                    )),
+                              ),
+                              SizedBox(
+                                width: w * 0.02,
+                              ),
+                              Container(
+                                width: w * 0.025,
+                                height: w * 0.025,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Colorss.TextColor1,
+                                      width: .5,
+                                    )),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: h * .05,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.email_outlined,
+                                color: Colorss.TextColor1,
+                              ),
+                              SizedBox(
+                                width: w * 0.001,
+                              ),
+                              Text(
+                                'kassabkasb@gmail.com',
+                                style: GoogleFonts.lato(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colorss.TextColor1),
+                              ),
+                              SizedBox(
+                                width: w * .05,
+                              ),
+                              Icon(
+                                Icons.phone_outlined,
+                                color: Colorss.TextColor1,
+                              ),
+                              SizedBox(
+                                width: w * 0.001,
+                              ),
+                              Text(
+                                '+201063012453',
+                                style: GoogleFonts.lato(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colorss.TextColor1),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: h * .05,
+                          ),
+                          Divider(
+                            endIndent: w * 0.25,
+                            indent: w * 0.25,
+                            color: Colorss.TextColor1,
+                          ),
+                          SizedBox(
+                            height: h * .05,
+                          ),
+                          Row(
+                            
+                            children: [
+                              Icon(
+                                Icons.copyright_outlined,
+                                color: Colorss.TextColor1,
+                              ),
+                              SizedBox(
+                                width: w * 0.01,
+                              ),
+                              Text(
+                                'Developed by Salah Saad',
+                                style: GoogleFonts.lato(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colorss.TextColor1),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ))
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class part5 extends StatelessWidget {
+  const part5({
+    super.key,
+    required this.w,
+    required this.h,
+  });
+
+  final double w;
+  final double h;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: w,
+      height: h * 1.2,
+      color: Colorss.PrimaryColor,
+      child: Padding(
+        padding: EdgeInsets.only(left: w * 0.1, right: w * 0.1, top: h * 0.1),
+        child: Column(
+          children: [
+            Text(
+              'Contact me',
+              style: GoogleFonts.lato(
+                textStyle: TextStyle(
+                  fontSize: ResponsiveFontsize.responsiveFontSize(context, 40),
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: h * 0.05,
+            ),
+            Text(
+              'I am available for freelance work. Connect with me via phone or email or contact form.',
+              style: GoogleFonts.lato(
+                textStyle: TextStyle(
+                  fontSize: ResponsiveFontsize.responsiveFontSize(context, 14),
+                  fontWeight: FontWeight.w500,
+                  color: Colorss.TextColor1,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: h * 0.1,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                customtextfeild(title: 'Name', w: w),
+                SizedBox(
+                  width: w * 0.05,
+                ),
+                customtextfeild(title: 'Email', w: w)
+              ],
+            ),
+            SizedBox(
+              height: h * 0.05,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                customtextfeild(title: 'Phone', w: w),
+                SizedBox(
+                  width: w * 0.05,
+                ),
+                customtextfeild(title: 'Time Line', w: w)
+              ],
+            ),
+            SizedBox(
+              height: h * 0.05,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: w * .75,
+                  decoration: BoxDecoration(
+                    color: Colorss.ContainerColor2,
+                    borderRadius: BorderRadius.circular(
+                        w * 0.008), // تحديد نصف قطر الزوايا
+                  ),
+                  child: TextFormField(
+                      maxLines: 5,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(
+                                w * 0.008), // تحديد نصف قطر الزوايا
+                          ),
+                          hintText: 'Enter your message',
+                          hintStyle: GoogleFonts.lato(
+                            textStyle: TextStyle(
+                              fontSize: ResponsiveFontsize.responsiveFontSize(
+                                  context, 14),
+                              fontWeight: FontWeight.w400,
+                              color: Colorss.TextColor1,
+                            ),
+                          ))),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: h * 0.05,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(right: w * .02),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(w * 0.04, h * 0.08),
+                        backgroundColor: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(w * 0.008),
+                            side: BorderSide(
+                              color: Colorss.TextColor1,
+                              width: 2,
+                            )),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Send',
+                        style: GoogleFonts.lato(
+                            textStyle: TextStyle(
+                          fontSize: ResponsiveFontsize.responsiveFontSize(
+                              context, 14),
+                          fontWeight: FontWeight.w600,
+                          color: Colorss.TextColor1,
+                        )),
+                      )),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class customtextfeild extends StatelessWidget {
+  const customtextfeild({
+    super.key,
+    required this.w,
+    required this.title,
+  });
+
+  final double w;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: w * 0.35,
+      decoration: BoxDecoration(
+        color: Colorss.ContainerColor2,
+        borderRadius: BorderRadius.circular(w * 0.008), // تحديد نصف قطر الزوايا
+      ),
+      child: TextFormField(
+          decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius:
+                    BorderRadius.circular(w * 0.008), // تحديد نصف قطر الزوايا
+              ),
+              hintText: title,
+              hintStyle: GoogleFonts.lato(
+                textStyle: TextStyle(
+                  fontSize: ResponsiveFontsize.responsiveFontSize(context, 14),
+                  fontWeight: FontWeight.w400,
+                  color: Colorss.TextColor1,
+                ),
+              ))),
     );
   }
 }
