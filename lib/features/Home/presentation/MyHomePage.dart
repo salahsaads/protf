@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       "index": "2",
       "platform": "Desktop",
       "description":
-          "Flutter supports macOS, Windows, and Linux, making it possible to build apps for desktop platforms."
+          "Flutter supports macOS, Windows,  and Linux, making it possible to build apps for desktop platforms."
     }
   ];
 
